@@ -24,7 +24,7 @@
 %% decoder, so that it can handle json values like `5` and `-20`!
 
 -spec decoder() -> dj:decoder(integer()).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() -> dj:integer().
 
 %% Tests
 %%

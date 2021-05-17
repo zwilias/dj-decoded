@@ -19,7 +19,7 @@
 %%     [ <<"foo">>, <<"bar">>, <<"baz">> ]
 
 -spec decoder() -> dj:decoder([binary()]).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() -> dj:list(dj:binary()).
 
 %% Tests
 %%

@@ -14,7 +14,7 @@
 %%       [ <<"FOO">>, <<"BAR">> ]
 
 -spec decoder() -> dj:decoder([binary()]).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() -> dj:list(dj:map(fun string:uppercase/1, dj:binary())).
 
 %% Tests
 %%

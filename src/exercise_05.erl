@@ -24,7 +24,10 @@
 %% first!
 
 -spec decoder() -> dj:decoder(integer()).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() ->
+  dj:mapn( fun binary:copy/2
+         , [dj:field(term, dj:binary()), dj:field(repeat, dj:non_neg_integer())]
+         ).
 
 %% Tests
 %%

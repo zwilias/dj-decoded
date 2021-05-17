@@ -24,7 +24,7 @@
 %% decoder, and that will apply that decoder to the given field!
 
 -spec decoder() -> dj:decoder(integer()).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() -> dj:field(age, dj:integer()).
 
 %% Tests
 %%
