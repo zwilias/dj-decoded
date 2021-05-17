@@ -36,7 +36,7 @@
 %%     [123]
 
 -spec decoder() -> dj:decoder([integer()]).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() -> dj:one_of([dj:list(dj:integer()), dj:map(fun (X) -> [X] end, dj:integer())]).
 
 %% Tests
 %%

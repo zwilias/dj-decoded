@@ -14,7 +14,7 @@
 %%     at all! So, we can ignore that edge-case for the purposes of this experiment :)
 
 -spec decoder() -> dj:decoder(foobar).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() -> dj:succeed(foobar).
 
 %% Tests
 %%

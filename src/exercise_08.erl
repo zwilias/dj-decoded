@@ -27,7 +27,7 @@
 all_colors() -> [red, green, blue].
 
 -spec decoder() -> dj:decoder(color()).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() -> dj:atom(all_colors()).
 
 %% Tests
 %%

@@ -33,7 +33,11 @@
 %% order as defined by the `"keys"` field... Good luck!
 
 -spec decoder() -> dj:decoder([integer()]).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() ->
+  dj:chain( dj:field(keys, dj:list(dj:binary()))
+          , fun (Keys) -> dj:field(data, dj:sequence([dj:field(K, dj:binary()) || K <- Keys]))
+            end
+          ).
 
 %% Tests
 %%

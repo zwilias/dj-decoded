@@ -22,7 +22,8 @@
 %% and a non-negative integer!
 
 -spec decoder() -> dj:decoder(#{name := binary(), age := non_neg_integer()}).
-decoder() -> dj:fail(<<"I always fail!">>).
+decoder() ->
+  dj:to_map(#{name => dj:field(name, dj:binary()), age => dj:field(age, dj:non_neg_integer())}).
 
 %% Tests
 %%
